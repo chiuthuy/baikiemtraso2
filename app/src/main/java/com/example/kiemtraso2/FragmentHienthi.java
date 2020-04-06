@@ -24,7 +24,17 @@ public class FragmentHienthi extends Fragment {
         view=inflater.inflate(R.layout.fragment_hienthi,container,false);
         recyclerView = view.findViewById(R.id.recyclerview);
         arrayList = new ArrayList<>();
+        int[] a={R.drawable.abc};
+        MonanModel monan=new MonanModel(a[0],"ten mon an","10000");
+        arrayList.add(monan);
+        arrayList.add(monan);
+        arrayList.add(monan);
+        hienthiAdapter = new HienthiAdapter(getActivity(),arrayList);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(hienthiAdapter);
 
         return view;
     }
